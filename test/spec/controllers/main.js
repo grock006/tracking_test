@@ -13,11 +13,14 @@ describe('Controller: MainCtrl', function () {
     scope = $rootScope.$new();
     MainCtrl = $controller('MainCtrl', {
       $scope: scope
-      // place here mocked dependencies
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(MainCtrl.awesomeThings.length).toBe(3);
+    it('loads a list of recipes to the scope', function () {
+       expect(scope.recipes).not.toBe(undefined);
+       expect(scope.recipes).not.toBe(null);
+       expect(scope.recipes.length).toBe(3);
   });
+
+
 });
